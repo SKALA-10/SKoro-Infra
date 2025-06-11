@@ -11,7 +11,7 @@ spec:
     - host: skoro.skala25a.project.skala-ai.com
       http:
         paths:
-          - path: /api/swagger(/|$)(.*)
+          - path: /api/swagger
             pathType: Prefix
             backend:
               service:
@@ -19,7 +19,7 @@ spec:
                 port:
                   number: 8080
 
-          - path: /api(/|$)(.*)
+          - path: /api
             pathType: Prefix
             backend:
               service:
