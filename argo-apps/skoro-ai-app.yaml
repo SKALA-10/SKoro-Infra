@@ -4,7 +4,7 @@ metadata:
   name: skoro-ai
   namespace: argocd
 spec:
-  project: default
+  project: class-2
   source:
     repoURL: https://github.com/SKALA-10/SKoro-Infra.git
     targetRevision: main
