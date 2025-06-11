@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: skoro-ingress
+  namespace: sk-team-10
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: public-nginx
+  rules:
+    - host: skoro.skala25a.project.skala-ai.com
+      http:
+        paths:
+          - path: /api/swagger(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: skoro-backend
+                port:
+                  number: 8080
+
+          - path: /api(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: skoro-backend
+                port:
+                  number: 8080
+
+          
