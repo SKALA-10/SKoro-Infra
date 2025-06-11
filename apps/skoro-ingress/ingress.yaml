@@ -4,7 +4,6 @@ metadata:
   name: skoro-ingress
   namespace: sk-team-10
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: public-nginx
