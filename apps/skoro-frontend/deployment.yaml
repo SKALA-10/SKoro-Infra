@@ -4,7 +4,7 @@ metadata:
   name: skoro-frontend
   namespace: sk-team-10
   labels:
-    app: skoro-ai
+    app: skoro-frontend
 spec:
   replicas: 1
   selector:
