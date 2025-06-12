@@ -26,4 +26,28 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
+          env:
+            - name: PINECONE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-backend-secret
+                  key: PINECONE_API_KEY
+
+            - name: PINECONE_INDEX_REPORTS
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: PINECONE_INDEX_REPORTS
+
+            - name: PINECONE_INDEX_POLICY
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: PINECONE_INDEX_POLICY
+
+            - name: PINECONE_INDEX_APPEALS
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: PINECONE_INDEX_APPEALS
             
