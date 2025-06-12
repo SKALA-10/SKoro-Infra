@@ -30,7 +30,7 @@ spec:
             - name: PINECONE_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: skoro-backend-secret
+                  name: skoro-ai-secret
                   key: PINECONE_API_KEY
 
             - name: PINECONE_INDEX_REPORTS
