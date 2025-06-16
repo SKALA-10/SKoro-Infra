@@ -27,6 +27,72 @@ spec:
           ports:
             - containerPort: 8000
           env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: OPENAI_API_KEY
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: DB_PASSWORD
+
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: DB_HOST
+
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: DB_NAME
+
+            - name: DB_TYPE
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: DB_TYPE
+
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: DB_USERNAME
+
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: DB_PORT
+
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: REDIS_HOST
+                  
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: REDIS_PORT
+
+            - name: REDIS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: REDIS_USERNAME
+
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: skoro-ai-secret
+                  key: REDIS_PASSWORD
+
             - name: PINECONE_API_KEY
               valueFrom:
                 secretKeyRef:
