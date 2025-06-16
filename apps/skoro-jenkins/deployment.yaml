@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skoro-jenkins
+  namespace: sk-team-10
+  labels:
+    app: skoro-jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skoro-jenkins
+  template:
+    metadata:
+      labels:
+        app: skoro-jenkins
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: skoro-jenkins
+          image: jenkins/jenkins:lts
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+            - containerPort: 50000
+          env:
+            - name: JENKINS_OPTS
+              value: --prefix=/jenkins
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+      volumes:
+        - name: jenkins-home
+          hostPath:
+            path: /mnt/data/jenkins
+        - name: docker-sock
+          hostPath:
+            path: /var/run/docker.sock
