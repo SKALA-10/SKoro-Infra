@@ -15,6 +15,14 @@ spec:
     - host: skoro.skala25a.project.skala-ai.com
       http:
         paths:
+          - path: /jenkins
+            pathType: Prefix
+            backend:
+              service:
+                name: skoro-jenkins
+                port:
+                  number: 8080
+
           - path: /api/ai
             pathType: Prefix
             backend:
