@@ -1,2 +1,0 @@
-# SKoro-Infra
-SKoro-Infra
