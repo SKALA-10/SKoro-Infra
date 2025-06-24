@@ -27,6 +27,9 @@ spec:
           ports:
             - containerPort: 8000
           env:
+            - name: TZ
+              value: Asia/Seoul
+              
             - name: OPENAI_API_KEY
               valueFrom:
                 secretKeyRef:
