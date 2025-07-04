@@ -23,7 +23,7 @@ spec:
       containers:
         - name: backend
           image: amdp-registry.skala-ai.com/skala25a/skoro-backend:1.0.0-63
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent #Always
           ports:
             - containerPort: 8080
           env:
