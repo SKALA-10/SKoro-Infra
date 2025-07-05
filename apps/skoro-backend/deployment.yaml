@@ -22,8 +22,8 @@ spec:
       serviceAccountName: default
       containers:
         - name: backend
-          image: amdp-registry.skala-ai.com/skala25a/skoro-backend:1.0.0-63
-          imagePullPolicy: IfNotPresent #Always
+          image: amdp-registry.skala-ai.com/skala25a/skoro-backend:1.0.0-64
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
