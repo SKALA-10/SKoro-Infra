@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: skoro-frontend
-  namespace: sk-team-10
+  namespace: sk-team-12
   labels:
     app: skoro-frontend
 spec:
