@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: skoro-frontend
-  namespace: sk-team-12
+  namespace: sk-team-10
   labels:
     app: skoro-frontend
 spec:
@@ -22,7 +22,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: frontend
-          image: amdp-registry.skala-ai.com/skala25a/skoro-frontend:1.0.0-11
+          image: amdp-registry.skala-ai.com/skala25a/skoro-frontend:1.0.0-12
           imagePullPolicy: Always
           ports:
             - containerPort: 80
